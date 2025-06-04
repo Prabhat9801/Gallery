@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mother's Day Special</title>
+    <title>For My Beautiful Girlfriend ❤️</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500&display=swap');
 
@@ -18,66 +18,119 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #f5d9ff, #f9c4d2, #fce4ec);
-            background-size: 300% 300%;
-            animation: gradient 15s ease infinite;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            background-size: 400% 400%;
+            animation: dreamyGradient 8s ease infinite;
             font-family: 'Quicksand', sans-serif;
             overflow: hidden;
             position: relative;
-            transition: background 0.5s ease;
+            transition: all 0.8s ease;
+        }
+
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            animation: sparkleFloat 3s ease-in-out infinite;
         }
 
         .glass-container {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            padding: 40px 60px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(15px);
+            border-radius: 40px;
+            padding: 50px 70px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 
+                0 15px 35px rgba(255, 105, 180, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
             text-align: center;
-            animation: float 6s ease-in-out infinite;
+            animation: gentleFloat 4s ease-in-out infinite;
+            position: relative;
+            max-width: 90vw;
+        }
+
+        .glass-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500, #ff6b9d);
+            border-radius: 42px;
+            z-index: -1;
+            animation: borderGlow 3s ease-in-out infinite;
         }
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 5em;
-            background: linear-gradient(45deg, #d291bc, #957dad, #7b5d9e);
+            font-size: 4.5em;
+            background: linear-gradient(45deg, #e91e63, #ff6b9d, #c44569, #8e44ad);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
-            margin-bottom: 30px;
-            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(233, 30, 99, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        .subtitle {
+            color: #ad1457;
+            font-size: 1.4em;
+            margin-bottom: 25px;
+            font-weight: 400;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .romantic-message {
+            color: #6a1b9a;
+            font-size: 1.1em;
+            margin-bottom: 35px;
+            font-weight: 300;
+            font-style: italic;
+            opacity: 0.85;
+            animation: fadeInUp 1s ease 1s both;
+            line-height: 1.6;
         }
 
         .btn-container {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 1.5s both;
         }
 
         .btn {
             font-family: 'Quicksand', sans-serif;
-            padding: 15px 40px;
-            font-size: 1.2em;
-            background: linear-gradient(45deg, #d291bc, #957dad);
+            padding: 18px 45px;
+            font-size: 1.3em;
+            background: linear-gradient(45deg, #ff6b9d, #e91e63, #c44569);
             color: white;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.5s ease;
-            box-shadow: 0 5px 15px rgba(210, 145, 188, 0.4);
+            transition: all 0.4s ease;
+            box-shadow: 
+                0 8px 25px rgba(233, 30, 99, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
             position: relative;
             overflow: hidden;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .color-btn {
-            background: linear-gradient(45deg, #d291bc, #f7cac9);
+            background: linear-gradient(45deg, #f8b500, #ff6b9d, #e91e63);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(210, 145, 188, 0.6);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 35px rgba(233, 30, 99, 0.6),
+                0 0 20px rgba(255, 107, 157, 0.8);
         }
 
         .btn::before {
@@ -90,65 +143,35 @@
             background: linear-gradient(
                 120deg,
                 transparent,
-                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0.4),
                 transparent
             );
-            transition: 0.5s;
+            transition: 0.6s;
         }
 
         .btn:hover::before {
             left: 100%;
         }
 
-        .heart {
+        .floating-hearts {
             position: absolute;
-            font-size: 1.5rem;
+            font-size: 2rem;
             pointer-events: none;
-            animation: floatHeart linear forwards;
-            opacity: 0.6;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes floatHeart {
-            0% {
-                transform: translateY(100vh) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            20% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .subtitle {
-            color: #5d3754;
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            font-weight: 300;
-            opacity: 0.9;
+            animation: floatHearts 6s linear infinite;
+            opacity: 0.7;
         }
 
         .love-msg {
             position: absolute;
-            bottom: 20px;
-            font-size: 0.9em;
-            color: #5d3754;
-            opacity: 0.8;
-            font-weight: 300;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.1em;
+            color: #ad1457;
+            opacity: 0.9;
+            font-weight: 400;
+            animation: heartbeat 2s ease-in-out infinite;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
         }
 
         .page-transition {
@@ -157,44 +180,146 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: white;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
             opacity: 0;
             pointer-events: none;
-            transition: opacity 1s ease;
+            transition: opacity 1.2s ease;
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        @keyframes dreamyGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatHearts {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% {
+                transform: translateY(-10vh) translateX(200px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sparkleFloat {
+            0%, 100% {
+                transform: translateY(0) scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(-20px) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
+        }
+
+        .music-note {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(233, 30, 99, 0.6);
+            pointer-events: none;
+            animation: musicFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes musicFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+                opacity: 0.8;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 3.5em; }
+            .glass-container { padding: 30px 40px; }
+            .btn { padding: 15px 35px; font-size: 1.1em; }
+            .btn-container { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
     <div class="page-transition"></div>
     <div class="glass-container">
-        <h1>Happy Mother's Day</h1>
-        <p class="subtitle">To the world's most wonderful mother...</p>
+        <h1>For My Beautiful Girl ✨</h1>
+        <p class="subtitle">The one who makes my world brighter every day</p>
+        <p class="romantic-message">
+            "Every moment with you feels like a dream,<br>
+            and I never want to wake up..."
+        </p>
         <div class="btn-container">
-            <button class="btn color-btn">Change Colors 🌸</button>
-            <button class="btn">View Our Memories 💝</button>
+            <button class="btn color-btn">Change Mood 🌈</button>
+            <button class="btn">My Girl 💕</button>
         </div>
     </div>
-    <p class="love-msg">Made with love, for my dearest Maa ❤️</p>
+    <p class="love-msg">Created with all my love, just for you ❤️</p>
 
     <script>
-        const heartEmojis = ['❤️', '🌸', '🌷', '💐', '🌹'];
+        const romanticEmojis = ['❤️', '💕', '💖', '🌹', '✨', '💫', '🦋', '🌸'];
+        const musicNotes = ['🎵', '🎶', '♪', '♫'];
+        const sparkles = ['✨', '💫', '⭐', '🌟'];
+        
         const gradients = [
-            'linear-gradient(135deg, #f5d9ff, #f9c4d2, #fce4ec)',
-            'linear-gradient(135deg, #e0c3fc, #f9c4d2, #fce4ec)',
-            'linear-gradient(135deg, #f9c4d2, #f5d9ff, #fce4ec)',
-            'linear-gradient(135deg, #fce4ec, #f9c4d2, #f5d9ff)',
-            'linear-gradient(135deg, #f9c4d2, #e0c3fc, #fce4ec)',
+            'linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e)',
+            'linear-gradient(135deg, #a18cd1, #fbc2eb, #fbc2eb, #a18cd1)',
+            'linear-gradient(135deg, #ffecd2, #fcb69f, #fcb69f, #ffecd2)',
+            'linear-gradient(135deg, #ff8a80, #ffcdd2, #ffcdd2, #ff8a80)',
+            'linear-gradient(135deg, #d1c4e9, #f8bbd9, #f8bbd9, #d1c4e9)',
+            'linear-gradient(135deg, #ffb3ba, #ffdfba, #ffffba, #baffc9)'
         ];
 
         let currentGradient = 0;
 
-        function createHeart() {
+        function createFloatingHeart() {
             const heart = document.createElement('div');
-            heart.classList.add('heart');
+            heart.classList.add('floating-hearts');
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 5 + 3 + 's';
-            heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.innerHTML = romanticEmojis[Math.floor(Math.random() * romanticEmojis.length)];
             document.body.appendChild(heart);
 
             heart.addEventListener('animationend', () => {
@@ -202,19 +327,84 @@
             });
         }
 
-        setInterval(createHeart, 600);
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            sparkle.innerHTML = sparkles[Math.floor(Math.random() * sparkles.length)];
+            document.body.appendChild(sparkle);
 
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+
+        function createMusicNote() {
+            const note = document.createElement('div');
+            note.classList.add('music-note');
+            note.style.left = Math.random() * 100 + 'vw';
+            note.style.top = Math.random() * 100 + 'vh';
+            note.style.animationDelay = Math.random() * 2 + 's';
+            note.innerHTML = musicNotes[Math.floor(Math.random() * musicNotes.length)];
+            document.body.appendChild(note);
+
+            setTimeout(() => {
+                note.remove();
+            }, 4000);
+        }
+
+        // Create floating elements
+        setInterval(createFloatingHeart, 800);
+        setInterval(createSparkle, 1200);
+        setInterval(createMusicNote, 2000);
+
+        // Color change functionality
         document.querySelector('.color-btn').addEventListener('click', () => {
             currentGradient = (currentGradient + 1) % gradients.length;
             document.body.style.background = gradients[currentGradient];
+            document.body.style.backgroundSize = '400% 400%';
+            
+            // Add a little celebration effect
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createSparkle();
+                }, i * 100);
+            }
         });
 
+        // Gallery navigation
         document.querySelector('.btn:not(.color-btn)').addEventListener('click', () => {
             const transition = document.querySelector('.page-transition');
+            transition.innerHTML = '<div>The Beautiful Girl is... 💕</div>';
             transition.style.opacity = '1';
+            
             setTimeout(() => {
-                window.location.href = 'gallary.html';
-            }, 1000);
+                // You can replace this with your gallery page
+                alert('Here you would navigate to your photo gallery! Replace this with window.location.href = "gallery.html"');
+                transition.style.opacity = '0';
+            }, 2000);
+        });
+
+        // Add some interactive sparkles on click
+        document.addEventListener('click', (e) => {
+            for (let i = 0; i < 5; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.innerHTML = '✨';
+                sparkle.style.position = 'fixed';
+                sparkle.style.left = e.clientX + (Math.random() - 0.5) * 100 + 'px';
+                sparkle.style.top = e.clientY + (Math.random() - 0.5) * 100 + 'px';
+                sparkle.style.fontSize = '1.5rem';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.animation = 'sparkleFloat 1s ease-out forwards';
+                sparkle.style.zIndex = '999';
+                document.body.appendChild(sparkle);
+
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
+            }
         });
     </script>
 </body>
